@@ -1,0 +1,81 @@
+#box{
+    stroke-width: 10px;
+    stroke:red;
+    border-width: 10px;
+    border-color: black;
+}
+.btns{
+    background-color: white;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 3px;
+}
+#vertBtn{
+    background-color: rgba(128,128,128,0.5);
+    border-color: rgba(128,128,128,0.5);
+    color: black;
+    width: 90px; 
+    height: 25px; 
+    position: absolute; 
+    margin-top: -150px; 
+    margin-left: 855px; 
+    border-width:3px;
+    
+}
+#horizBtn{
+    border-color: rgb(0, 255, 0);
+    background-color: rgb(0, 255, 0);
+    color: white;
+    width: 90px; 
+    height: 25px; 
+    position: absolute; 
+    margin-top: -150px; 
+    margin-left: 770px; 
+    border-width:3px;
+}
+#isVert{
+    opacity:0;
+    width: 0;
+    height: 0;
+}
+#isHoriz{
+    opacity:0;
+    width: 0;
+    height: 00;
+}
+#isSelected{
+    opacity:0;
+    width: 0;
+    height: 00;
+}
+#vertText{
+    color: gray;
+    font-size: 14px;
+}
+#horizText{
+    color: gray;
+    font-size: 14px;
+}
+#isVert:checked ~ #vertText{
+    opacity:1;
+}
+#isVert:checked ~ #horizText{
+    opacity:0;
+}
+#isHoriz:checked ~ #vertText{
+    opacity:0;
+}
+#isHoriz:checked ~ #horizText{
+    opacity:1;
+}
+#canvas{
+    cursor:crosshair;
+}
+#info-box{
+    opacity: 0;
+}
+
+
+
+
+

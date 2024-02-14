@@ -1,0 +1,55 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>CCP #2 </title>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+    <div>
+    <svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1000" height="500" style="fill: white;stroke-width:3;stroke:black; position: absolute;" rx="10px" />
+    </svg>
+<div id="info-card-whole" >
+
+    <h1 id="header" class="info-card" style="position: absolute; margin-top: -500px; margin-left: 375px;">Create Lewis Dot Structure</h>
+        <h4 class="info-card" style="position: absolute; margin-top: -475px; margin-left: 25px; font-weight: normal;">Satisfies Octet Rule</h4>
+        <h5 class="info-card" id="findInfo" style="position: absolute; margin-top: -475px; margin-left: 155px; font-weight: normal;">ⓘ:</h5>
+        <div class="black-box" id="info-box" style="position: absolute; margin-top: -455px; margin-left: 45px;background-color:black;width:260px;height: 170px;">
+            <h4 style="position: absolute; margin-top: 0px; margin-left:5px; color:white">The <h4 style="position:absolute; margin-top: 0px; margin-left: 37px; color:blue">Octet Rule</h4></h4>
+            <h4 style="position: absolute; margin-top: 0px; margin-left: 115px;color:white">states that electrons</h4>
+            <h4 style="position: absolute; margin-left:5px; margin-top: 20px;color:white">bond to form a full shell. This means that every atom in your Lewis structure should be surrounded by 8 electrons (or 2, in the case of Hydrogen). Some elements, like Sulfur, can hold more than 8 electrons, so keep that in mind when making your Lewis Structure.</h4>
+        </div>
+        <h4 class="info-card" id="satisfies" style="position: absolute; margin-top: -475px; margin-left: 185px; font-weight: normal;">false</h4>
+    <canvas id="canvas" onclick="handleMouseClick()" width= "750px" height="435px" style="position: absolute; margin-top: -450px; margin-left: 10px;" ></canvas>
+    <h3 style="position: absolute; margin-top: -435px; margin-left: 780px;"><strong><u>Design Elements</u></strong></h3>
+    <button onclick="select(0)" id="singleElectronWrapper" class="btns" width="50px" height="25px" style="position: absolute; margin-top: -400px; margin-left: 760px;"><canvas width="50px" height="25px" id="singleElectron"></canvas></button>
+    <h4 id="singleElectron1" class="btns" style="position: absolute; margin-top: -395px; margin-left: 830px;">Single Electron</h4>
+    <button onclick="select(1)" id="lonePairWrapper" class= "btns" width="50px" height="25px" style="position: absolute; margin-top: -365px; margin-left: 760px;"><canvas width="50px" height="25px" id="lonePair"></canvas></button>
+    <h4 id="lonePair1" class="btns" style="position: absolute; margin-top: -360px; margin-left: 830px;">Lone Pair</h4>
+    <button onclick="select(2)" id="bond1Wrapper" class= "btns" width="50px" height="25px" style="position: absolute; margin-top: -330px; margin-left: 760px;"><canvas width="50px" height="25px" id="bond1"></canvas></button>
+    <h4 id="bond11" class="btns" style="position: absolute; margin-top: -325px; margin-left: 830px;">Single Bond</h4>
+    <button onclick="select(3)" id="bond2Wrapper" class= "btns" width="50px" height="25px" style="position: absolute; margin-top: -295px; margin-left: 760px;"><canvas width="50px" height="25px" id="bond2"></canvas></button>
+    <h4 id="bond21" class="btns" style="position: absolute; margin-top: -290px; margin-left: 830px;">Double Bond</h4>
+    <button onclick="select(4)" id="bond3Wrapper" class= "btns" width="50px" height="25px" style="position: absolute; margin-top: -260px; margin-left: 760px;"><canvas width="50px" height="25px" id="bond3"></canvas></button>
+    <h4 id="bond31" class="btns" style="position: absolute; margin-top: -255px; margin-left: 830px;">Triple Bond</h4>
+    <button onclick="select(5)" id="elementWrapper" class= "btns" width="50px" height="50px" style="position: absolute; margin-top: -225px; margin-left: 760px;"><canvas width="50px" height="50px" id="element"></canvas></button>
+    <h6 style="position: absolute; margin-top: -202.5px; margin-left: 880px;font-family:'Courier New', Courier, monospace">Symbol:</h6>
+    <input onkeyup="redraw()" id="symbol" class="btns" style="position: absolute; margin-top: -207.5px; margin-left: 925px;font-family:'Courier New', Courier, monospace" maxlength="2" size="2" value="H">
+    <h4 id="element1" class="btns" style="position: absolute; margin-top: -207.5px; margin-left: 830px;">Atom</h4>
+    <button id="horizBtn" onclick="selectDir('horiz')" width="100px" height="10px"><h4 style="margin-top: 0px; margin-left: 0px" id="horiz" >Horizontal</h4></button>
+    <button id="vertBtn" onclick="selectDir('vert')" width="100px" height="10px" style="width: 90px; height: 25px; position: absolute; margin-top: -150px; margin-left: 855px; border-width:3px;"><h4 style="margin-top: 0px; margin-left: 0px" id="vert" >Vertical</h4></button>
+    <label class="textBox">
+        <input type="checkbox" id="isVert">
+        <input type="checkbox" id="isHoriz">
+        <p style="opacity:0;">filler text</p>
+        <h3 id="horizText" style="position: absolute; margin-top: -185px; margin-left: 780px;">Design elements will<br>face horizontally <br> (←→)</h3>
+        <h3 id="vertText" style="position: absolute; margin-top: -185px; margin-left: 780px;">Design elements will<br>face vertically <br>(↑)</h3>
+    </label> 
+    <h3 style="font-family: Impact; margin-left:780px;margin-top:-125px;">Size:</h3>
+    <button onclick="updateSize(-1)" style="position: absolute;margin-top:-40px;margin-left:830px;"  width="10px" height="10px">-</button>
+    <input style="position: absolute;margin-top:-40px;margin-left:860px;" id="size" type="text" size="1" readonly="true" value="3"> 
+    <button onclick="updateSize(1)" style="position: absolute; margin-top:-40px;margin-left:890px;" width="10px" height="10px">+</button>
+</div>
+<script src="creator.js"></script>
+</body>
+</html>
